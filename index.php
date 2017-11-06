@@ -6,4 +6,12 @@
  * Time: 7:20 PM
  */
 
+require 'vendor/autoload.php';
+
 require 'app/views/patient.view.php';
+
+require 'core/bootstrap.php';
+
+$res = Container::get('database')->selectAll('patient');
+
+var_dump($res);
