@@ -6,6 +6,8 @@
  * Time: 8:31 PM
  */
 
+namespace App\Core;
+
 class Container
 {
     protected static $registry;

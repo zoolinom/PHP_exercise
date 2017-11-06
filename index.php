@@ -6,11 +6,16 @@
  * Time: 7:20 PM
  */
 
+use App\Core\Container;
+
 require 'vendor/autoload.php';
 
-require 'app/views/patient.view.php';
+//require 'app/views/patient.view.php';
 
 require 'core/bootstrap.php';
+
+$temp = 'Test';
+view('patient', ['temp' => $temp]);
 
 $res = Container::get('database')->selectAll('patient');
 

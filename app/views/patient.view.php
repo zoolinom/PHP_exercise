@@ -28,4 +28,6 @@
             </tr>
         </table>
 
+        <?= $temp; ?>
+
 <?php require('partials/footer.php'); ?>
