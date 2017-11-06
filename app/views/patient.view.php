@@ -16,18 +16,13 @@
                 <th>Last Name</th>
                 <th>JMBG</th>
             </tr>
-            <tr>
-                <td>insert name</td>
-                <td>insert last name</td>
-                <td>insert jmbg</td>
-            </tr>
-            <tr>
-                <td>insert name2</td>
-                <td>insert last name2</td>
-                <td>insert jmbg2</td>
-            </tr>
+            <?php foreach ($data as $patient) : ?>
+                <tr>
+                    <td><?= $patient->pat_name; ?></td>
+                    <td><?= $patient->pat_surname; ?></td>
+                    <td><?= $patient->JMBG; ?></td>
+                </tr>
+            <?php endforeach; ?>
         </table>
-
-        <?= $temp; ?>
 
 <?php require('partials/footer.php'); ?>

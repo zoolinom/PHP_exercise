@@ -15,14 +15,12 @@
             <th>First Name</th>
             <th>Last Name</th>
         </tr>
-        <tr>
-            <td>insert name</td>
-            <td>insert last name</td>
-        </tr>
-        <tr>
-            <td>insert name2</td>
-            <td>insert last name2</td>
-        </tr>
+        <?php foreach ($data as $doctor) : ?>
+            <tr>
+                <td><?= $doctor->doc_name; ?></td>
+                <td><?= $doctor->doc_surname; ?></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 
 <?php require('partials/footer.php'); ?>

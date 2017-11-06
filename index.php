@@ -7,6 +7,7 @@
  */
 
 use App\Core\Container;
+use App\Controllers\PagesController;
 
 require 'vendor/autoload.php';
 
@@ -14,9 +15,10 @@ require 'vendor/autoload.php';
 
 require 'core/bootstrap.php';
 
-$temp = 'Test';
-view('patient', ['temp' => $temp]);
+PagesController::patients();
 
-$res = Container::get('database')->selectAll('patient');
+PagesController::doctors();
 
-var_dump($res);
+//$res = Container::get('database')->selectAll('patient');
+
+//var_dump($res);
