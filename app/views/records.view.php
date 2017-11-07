@@ -31,4 +31,21 @@
         <?php endforeach; ?>
     </table>
 
+    <h1>Insert new record</h1>
+
+    <form action="/records" method="post">
+        Record type: <input type="text" name="rec_type"><br/>
+        Select patient: <select name="patient_id">
+            <?php foreach ($database['patients'] as $pat_data): ?>
+                <option value="<?= $pat_data->id; ?>"><?= "{$pat_data->id}, {$pat_data->pat_name}, {$pat_data->pat_surname}" ?></option>
+            <?php endforeach; ?>
+        </select><br/>
+        Select doctor: <select name="doctor_id">
+            <?php foreach ($database['doctors'] as $doc_data): ?>
+                <option value="<?= $doc_data->id; ?>"><?= "{$doc_data->id}, {$doc_data->doc_name}, {$doc_data->doc_surname}" ?></option>
+            <?php endforeach; ?>
+        </select><br/>
+        <input type="submit" value="Submit">
+    </form>
+
 <?php require('partials/footer.php'); ?>

@@ -10,6 +10,7 @@ class ComposerStaticInitc46eaf0b66f683782c6937bbcb59be20
         'App\\Controllers\\DoctorsController' => __DIR__ . '/../..' . '/app/controllers/DoctorsController.php',
         'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
         'App\\Controllers\\PatientsController' => __DIR__ . '/../..' . '/app/controllers/PatientsController.php',
+        'App\\Controllers\\RecordsController' => __DIR__ . '/../..' . '/app/controllers/RecordsController.php',
         'App\\Core\\Container' => __DIR__ . '/../..' . '/core/Container.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',

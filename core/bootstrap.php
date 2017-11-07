@@ -12,7 +12,7 @@ Container::bind('config', require 'config.php');
 
 Container::bind('database', new DBQuerryBuilder(DBConnection::make(Container::get('config')['database'])));
 
-function view($view_name, $data = [])
+function view($view_name, $data = [], $database = [])
 {
     //extract($data);
 
