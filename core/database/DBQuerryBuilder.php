@@ -43,4 +43,29 @@ class DBQuerryBuilder
 
     }
 
+    public function insert($table, $parameters)
+    {
+        //App::get('database')->insert('users', [
+        //'name' => $_POST['name']
+
+        $sql = sprintf('insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+
+        echo "<h2>$sql</h2>";
+
+        try
+        {
+            $statement = $this->pdo->prepare($sql);
+            //bind values
+            $statement->execute($parameters);
+        }
+        catch (Exception $e)
+        {
+            die('Whoops. Something went wrong');
+        }
+    }
+
 }

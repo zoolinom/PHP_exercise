@@ -7,12 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controllers\\PagesController' => $baseDir . '/app/controllers/PagesController.php',
+    'App\\Controllers\\PatientsController' => $baseDir . '/app/controllers/PatientsController.php',
     'App\\Core\\Container' => $baseDir . '/core/Container.php',
     'App\\Core\\Request' => $baseDir . '/core/Request.php',
     'App\\Core\\Router' => $baseDir . '/core/Router.php',
-    'ComposerAutoloaderInit502e6c390691ca90dc9e7a677fd06012' => $vendorDir . '/composer/autoload_real.php',
+    'ComposerAutoloaderInitc46eaf0b66f683782c6937bbcb59be20' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
-    'Composer\\Autoload\\ComposerStaticInit502e6c390691ca90dc9e7a677fd06012' => $vendorDir . '/composer/autoload_static.php',
+    'Composer\\Autoload\\ComposerStaticInitc46eaf0b66f683782c6937bbcb59be20' => $vendorDir . '/composer/autoload_static.php',
     'DBConnection' => $baseDir . '/core/database/DBConnection.php',
     'DBQuerryBuilder' => $baseDir . '/core/database/DBQuerryBuilder.php',
 );

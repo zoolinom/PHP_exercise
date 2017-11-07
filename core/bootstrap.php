@@ -18,3 +18,8 @@ function view($view_name, $data = [])
 
     return require "app/views/{$view_name}.view.php";
 }
+
+function redirect($path)
+{
+    header("Location: /{$path}");
+}

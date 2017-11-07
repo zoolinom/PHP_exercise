@@ -17,11 +17,6 @@ class PagesController
         return view('index');
     }
 
-    public static function patients()
-    {
-        $patients = Container::get('database')->selectAll('patient');
-        return view('patients', $patients);
-    }
 
     public static function doctors()
     {

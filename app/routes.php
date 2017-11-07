@@ -7,6 +7,9 @@
  */
 
 $router->get('', 'PagesController@home');
-$router->get('patients', 'PagesController@patients');
+
 $router->get('doctors', 'PagesController@doctors');
 $router->get('records', 'PagesController@records');
+
+$router->get('patients', 'PatientsController@index');
+$router->post('patients', 'PatientsController@store');
