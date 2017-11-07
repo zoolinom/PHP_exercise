@@ -20,7 +20,7 @@ class PagesController
     public static function patients()
     {
         $patients = Container::get('database')->selectAll('patient');
-        return view('patient', $patients);
+        return view('patients', $patients);
     }
 
     public static function doctors()
@@ -29,9 +29,9 @@ class PagesController
         return view('doctors', $doctors);
     }
 
-    public function record()
+    public function records()
     {
-        return view('record');
+        return view('records');
     }
 
 }

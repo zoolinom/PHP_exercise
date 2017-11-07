@@ -6,8 +6,8 @@
  * Time: 7:20 PM
  */
 
-use App\Core\Container;
-use App\Controllers\PagesController;
+use App\Core\Router;
+use App\Core\Request;
 
 require 'vendor/autoload.php';
 
@@ -15,9 +15,9 @@ require 'vendor/autoload.php';
 
 require 'core/bootstrap.php';
 
-PagesController::patients();
+//var_dump($_SERVER);
 
-PagesController::doctors();
+Router::load('app/routes.php')->direct(Request::uri(), Request::type());
 
 //$res = Container::get('database')->selectAll('patient');
 
