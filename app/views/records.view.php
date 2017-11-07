@@ -26,7 +26,7 @@
                 <td><?= $record->pat_name; ?></td>
                 <td><?= $record->pat_surname; ?></td>
                 <td><?= $record->doc_name; ?></td>
-                <td><?= $record->doc_name; ?></td>
+                <td><?= $record->doc_surname; ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
