@@ -19,22 +19,16 @@
             <th>Doctor name</th>
             <th>Doctor surname</th>
         </tr>
-        <tr>
-            <td>insert number</td>
-            <td>insert record type</td>
-            <td>insert patient name</td>
-            <td>insert patient surname</td>
-            <td>insert doctor name</td>
-            <td>insert doctor surname</td>
-        </tr>
-        <tr>
-            <td>insert number2</td>
-            <td>insert record type2</td>
-            <td>insert patient name2</td>
-            <td>insert patient surname2</td>
-            <td>insert doctor name2</td>
-            <td>insert doctor surname2</td>
-        </tr>
+        <?php foreach ($data as $record) : ?>
+            <tr>
+                <td><?= $record->id; ?></td>
+                <td><?= $record->record_type; ?></td>
+                <td><?= $record->pat_name; ?></td>
+                <td><?= $record->pat_surname; ?></td>
+                <td><?= $record->doc_name; ?></td>
+                <td><?= $record->doc_name; ?></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 
 <?php require('partials/footer.php'); ?>

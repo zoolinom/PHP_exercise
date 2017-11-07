@@ -31,7 +31,8 @@ class PagesController
 
     public function records()
     {
-        return view('records');
+        $records = Container::get('database')->innerJoin('record', 'patient', 'doctor');
+        return view('records', $records);
     }
 
 }
