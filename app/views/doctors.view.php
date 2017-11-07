@@ -23,4 +23,12 @@
         <?php endforeach; ?>
     </table>
 
+    <h1>Add new doctor</h1>
+
+    <form action="/doctors" method="post">
+        First same: <input type="text" name="doc_name"><br/>
+        Last name: <input type="text" name="doc_surname"><br/>
+        <input type="submit" value="Submit">
+    </form>
+
 <?php require('partials/footer.php'); ?>

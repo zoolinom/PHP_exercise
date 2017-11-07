@@ -17,13 +17,6 @@ class PagesController
         return view('index');
     }
 
-
-    public static function doctors()
-    {
-        $doctors = Container::get('database')->selectAll('doctor');
-        return view('doctors', $doctors);
-    }
-
     public function records()
     {
         $records = Container::get('database')->innerJoin('record', ['id', 'record_type'], 'patient', ['pat_name', 'pat_surname'], 'doctor', ['doc_name', 'doc_surname']);

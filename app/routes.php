@@ -8,8 +8,10 @@
 
 $router->get('', 'PagesController@home');
 
-$router->get('doctors', 'PagesController@doctors');
-$router->get('records', 'PagesController@records');
-
 $router->get('patients', 'PatientsController@index');
 $router->post('patients', 'PatientsController@store');
+
+$router->get('doctors', 'DoctorsController@index');
+$router->post('doctors', 'DoctorsController@store');
+
+$router->get('records', 'PagesController@records');
