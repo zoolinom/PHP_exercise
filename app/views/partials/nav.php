@@ -9,9 +9,9 @@
 
 <nav>
     <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/patients">Patients</a></li>
-        <li><a href="/doctors">Doctors</a></li>
-        <li><a href="/records">Records</a></li>
+        <li><a id="tab1" class="active" href="/" onclick="changeActive(this.id)">Home</a></li>
+        <li><a id="tab2" class="" href="/patients" onclick="changeActive(this.id)">Patients</a></li>
+        <li><a id="tab3" class="" href="/doctors" onclick="changeActive(this.id)">Doctors</a></li>
+        <li><a id="tab4" class="" href="/records" onclick="changeActive(this.id)">Records</a></li>
     </ul>
 </nav>
