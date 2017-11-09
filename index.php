@@ -15,7 +15,7 @@ require 'vendor/autoload.php';
 
 require 'core/bootstrap.php';
 
-//var_dump($_SERVER);
+//die(var_dump($_SERVER));
 
 Router::load('app/routes.php')->direct(Request::uri(), Request::type());
 

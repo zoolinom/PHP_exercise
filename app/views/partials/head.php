@@ -13,6 +13,7 @@
         <meta charset="UTF-8">
         <title>Patients</title>
         <link rel="stylesheet" href="/public/css/style.css">
+        <script src="/public/js/jquery-3.2.1.min.js"></script>
         <script src="/public/js/myScript.js"></script>
     </head>
     <body>
