@@ -27,11 +27,13 @@
 
     <h1>Add new patient</h1>
 
-    <form action="/patients" method="post">
+    <form id="submit" action="/patients" method="post">
         First name: <input type="text" name="pat_name"><br/>
         Last name: <input type="text" name="pat_surname"><br/>
         JMBG: <input type="text" name="jmbg"><br/>
         <input type="submit" value="Submit">
     </form>
+
+    <p id="error" class="err">Text</p>
 
 <?php require('partials/footer.php'); ?>

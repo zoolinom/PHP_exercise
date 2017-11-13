@@ -51,6 +51,10 @@ li a:hover:not(.active) {
     background-color: #4caf50;
 }
 
+.err {
+    color: red;
+}
+
 h1, h2 {
     padding: 20px;
     margin-top: 40px;

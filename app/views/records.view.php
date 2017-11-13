@@ -32,8 +32,8 @@
     </table>
 
     <h1>Insert new record</h1>
-
-    <form action="/records" method="post">
+<!--TODO add check in myScript.js-->
+    <form id="submit" action="/records" method="post">
         Record type: <input type="text" name="rec_type"><br/>
         Select patient: <select name="patient_id">
             <?php foreach ($database['patients'] as $pat_data): ?>
