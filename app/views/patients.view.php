@@ -27,7 +27,7 @@
 
     <h1>Add new patient</h1>
 
-    <form id="submit" action="/patients" method="post">
+    <form action="/patients" method="post">
         First name: <input type="text" name="pat_name"><br/>
         Last name: <input type="text" name="pat_surname"><br/>
         JMBG: <input type="text" name="jmbg"><br/>

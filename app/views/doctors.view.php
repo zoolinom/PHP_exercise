@@ -24,11 +24,13 @@
     </table>
 
     <h1>Add new doctor</h1>
-    <!--TODO add check in myScript.js-->
-    <form id="submit" action="/doctors" method="post">
-        First same: <input type="text" name="doc_name"><br/>
+
+    <form action="/doctors" method="post">
+        First name: <input type="text" name="doc_name"><br/>
         Last name: <input type="text" name="doc_surname"><br/>
         <input type="submit" value="Submit">
     </form>
+
+    <p id="error" class="err">Text</p>
 
 <?php require('partials/footer.php'); ?>

@@ -32,8 +32,8 @@
     </table>
 
     <h1>Insert new record</h1>
-<!--TODO add check in myScript.js-->
-    <form id="submit" action="/records" method="post">
+
+    <form action="/records" method="post">
         Record type: <input type="text" name="rec_type"><br/>
         Select patient: <select name="patient_id">
             <?php foreach ($database['patients'] as $pat_data): ?>
@@ -47,5 +47,7 @@
         </select><br/>
         <input type="submit" value="Submit">
     </form>
+
+    <p id="error" class="err">Text</p>
 
 <?php require('partials/footer.php'); ?>
