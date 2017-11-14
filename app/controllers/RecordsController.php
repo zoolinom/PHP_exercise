@@ -12,23 +12,33 @@ use App\Core\Container;
 
 class RecordsController
 {
-    public function index()
+    public function index($err = '')
     {
-        $records = Container::get('database')->innerJoin('record', ['id', 'record_type'], 'patient', ['pat_name', 'pat_surname'], 'doctor', ['doc_name', 'doc_surname']);
+        $records['data'] = Container::get('database')->innerJoin('record', ['id', 'record_type'], 'patient', ['pat_name', 'pat_surname'], 'doctor', ['doc_name', 'doc_surname']);
 
         $patients = Container::get('database')->selectAll('patient');
         $doctors = Container::get('database')->selectAll('doctor');
 
-        $database_data = [
-            'patients' => $patients,
-            'doctors' => $doctors
-        ];
+        $records['patients'] = $patients;
+        $records['doctors'] = $doctors;
+        $records['err'] = $err;
 
-        return view('records', $records, $database_data);
+        return view('records', $records);
     }
 
     public function store()
     {
+        $val_data = [
+            'rec_type' => $_POST['rec_type'],
+            'id_pat' => $_POST['patient_id'],
+            'id_doc' => $_POST['doctor_id']
+        ];
+
+        $err_code = validateData($val_data);
+        if ($err_code != 'ok') {
+            return $this->index($err_code);
+        }
+
         Container::get('database')->insert('record', [
             'record_type' => $_POST['rec_type'],
             'id_pat' => intval($_POST['patient_id']),

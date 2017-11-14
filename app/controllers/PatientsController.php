@@ -12,14 +12,27 @@ use App\Core\Container;
 
 class PatientsController
 {
-    public function index()
+    public function index($err = '')
     {
         $patients = Container::get('database')->selectAll('patient');
-        return view('patients', $patients);
+        $dat['data'] = $patients;
+        $dat['err'] = $err;
+        return view('patients', $dat);
     }
 
     public function store()
     {
+        $val_data = [
+            'pat_name' => $_POST['pat_name'],
+            'pat_surname' => $_POST['pat_surname'],
+            'jmbg' => $_POST['jmbg']
+        ];
+
+        $err_code = validateData($val_data);
+        if ($err_code != 'ok') {
+            return $this->index($err_code);
+        }
+
         Container::get('database')->insert('patient', [
             'pat_name' => $_POST['pat_name'],
             'pat_surname' => $_POST['pat_surname'],

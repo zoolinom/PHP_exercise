@@ -19,7 +19,7 @@
             <th>Doctor name</th>
             <th>Doctor surname</th>
         </tr>
-        <?php foreach ($data as $record) : ?>
+        <?php foreach ($data['data'] as $record) : ?>
             <tr>
                 <td><?= $record->id; ?></td>
                 <td><?= $record->record_type; ?></td>
@@ -36,18 +36,18 @@
     <form action="/records" method="post">
         Record type: <input type="text" name="rec_type"><br/>
         Select patient: <select name="patient_id">
-            <?php foreach ($database['patients'] as $pat_data): ?>
+            <?php foreach ($data['patients'] as $pat_data): ?>
                 <option value="<?= $pat_data->id; ?>"><?= "{$pat_data->id}, {$pat_data->pat_name}, {$pat_data->pat_surname}" ?></option>
             <?php endforeach; ?>
         </select><br/>
         Select doctor: <select name="doctor_id">
-            <?php foreach ($database['doctors'] as $doc_data): ?>
+            <?php foreach ($data['doctors'] as $doc_data): ?>
                 <option value="<?= $doc_data->id; ?>"><?= "{$doc_data->id}, {$doc_data->doc_name}, {$doc_data->doc_surname}" ?></option>
             <?php endforeach; ?>
         </select><br/>
         <input type="submit" value="Submit">
     </form>
 
-    <p id="error" class="err">Text</p>
+    <p id="error" class="err"><?php if ($data['err'] != '') echo "{$data['err']}"; ?></p>
 
 <?php require('partials/footer.php'); ?>

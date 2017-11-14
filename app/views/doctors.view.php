@@ -15,7 +15,7 @@
             <th>First Name</th>
             <th>Last Name</th>
         </tr>
-        <?php foreach ($data as $doctor) : ?>
+        <?php foreach ($data['data'] as $doctor) : ?>
             <tr>
                 <td><?= $doctor->doc_name; ?></td>
                 <td><?= $doctor->doc_surname; ?></td>
@@ -31,6 +31,6 @@
         <input type="submit" value="Submit">
     </form>
 
-    <p id="error" class="err">Text</p>
+    <p id="error" class="err"><?php if ($data['err'] != '') echo "{$data['err']}"; ?></p>
 
 <?php require('partials/footer.php'); ?>
